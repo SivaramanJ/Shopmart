@@ -1,0 +1,17 @@
+.navBar {
+    background-color: #112031 !important;
+    color: #fff;
+}
+.navCustomClass, .navBrand {
+    color: #fff !important;
+}
+.navLink {
+    margin-right: 20px;
+    padding-top: 10px;
+    color: #fff !important;
+}
+
+.containerCls {
+    margin: 0;
+    max-width: 100%;
+}
