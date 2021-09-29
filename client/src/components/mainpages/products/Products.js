@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { GlobalState } from "../../../GlobalState";
 import ProductItem from "../utils/productItem/ProductItem";
 import { Card, Container, Row, Button, Col } from "react-bootstrap";
-import "/Users/jsivaraman/Documents/Learnings/App project/ShoppingWebsite/client/src/components/mainpages/products/products.css"
+import "./products.css"
 
 export default function Products() {
   const state = useContext(GlobalState);
