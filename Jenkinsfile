@@ -1,16 +1,14 @@
-/* groovylint-disable CompileStatic */
 pipeline {
     agent {
-        any {
-            image 'node:14.16-alpine'
-            args '-p 3000:3000'
+        docker {
+            image 'node:lts-buster-slim' 
+            args '-p 3000:3000' 
         }
     }
-    tools { nodejs 'NODEJS' }
     stages {
-        stage('Build') {
+        stage('Build') { 
             steps {
-                sh 'npm i'
+                sh 'npm install' 
             }
         }
     }
