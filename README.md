@@ -4,10 +4,10 @@ Shopmart is an Ecommerce site to buy products across from different categories l
 
 **Server Setup**
 
-Clone the repository to your local
-1. Navigate to the server directory, and run the following command " npm install "
-2. Step 2 installs all the dependencies files
-3. Run "npm run server" to start the server
+1. Clone the repository to your local
+2. Navigate to the server directory, and run the following command " npm install "
+3. Step 2 installs all the dependencies files
+4. Run "npm run server" to start the server
 
 **Client Setup**
 
