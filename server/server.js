@@ -5,6 +5,7 @@ const cors = require("cors");
 const fileUpload = require("express-fileupload");
 const cookieParser = require("cookie-parser");
 const router = require("./routes/userRouter");
+const path = require('path');
 
 
 const init = () => {
@@ -33,7 +34,17 @@ const init = () => {
   app.use("/api", require("./routes/upload"));
   app.use("/api", require("./routes/productRouter"));
 
+  //Serve static assets if we are in production
+
+  if(process.env.NODE_ENV === 'production') {
+    app.use(express.static('../client/build'));
+    app('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'));
+    })
+  }
+
   const PORT = process.env.PORT || 5000;
+
   if (!module.parent) {
     app.listen(PORT, () => {
       console.log("Server listening to port: " + PORT);

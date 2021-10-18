@@ -3,19 +3,19 @@ version: '3.7'
 services:
   server:
     build:
-      context: ./
+      context: ./server
       dockerfile: ./Dockerfile
     image: jsiva95/shopmart-server
     container_name: shopmart-node-server
-    command: npm run serverstart
+    command: npm run server
     volumes:
-      - ./:/usr/src/app
+      - ./server/:/usr/src/app
       - /usr/src/app/node_modules
     ports:
       - "5000:5000"
     depends_on:
       - mongo
-    env_file: ./.env
+    env_file: ./server/.env
     environment:
       - NODE_ENV=development
     networks:
