@@ -9,6 +9,7 @@ const path = require('path');
 
 
 const init = () => {
+  console.log('init ');
   const app = express();
   app.use(express.json());
   app.use(cookieParser());
@@ -22,6 +23,7 @@ const init = () => {
   //connect to mangodb
 
   const URI = process.env.MONGODB_URL;
+  console.log(URI);
   mangoose.connect(URI, (err) => {
     if (err) throw err;
     console.log("Connected to DB");
@@ -37,17 +39,16 @@ const init = () => {
   //Serve static assets if we are in production
 
   if(process.env.NODE_ENV === 'production') {
-    app.use(express.static('../client/build'));
-    app('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'));
+    app.use(express.static('client/build'));
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     })
   }
 
   const PORT = process.env.PORT || 5000;
-
   if (!module.parent) {
     app.listen(PORT, () => {
-      console.log("Server listening to port: " + PORT);
+      console.log("Server listening to  port: " + PORT);
     });
   }
   return app;

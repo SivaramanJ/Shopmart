@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "12.11.1"
+  },
   "scripts": {
+    "client": "npm start --prefix client",
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
     "server": "nodemon server.js --ignore client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix  ../client && npm run build --prefix ../client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
