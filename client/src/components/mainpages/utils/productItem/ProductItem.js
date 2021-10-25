@@ -23,7 +23,8 @@ export default function ProductItem(props) {
           
           <Card.Text style={{color: "#282c3f", fontWeight: "600", marginBottom: "0.5rem"}}><span><img src={Ruppee} alt="ruppe" width="8"></img></span> {product.price}</Card.Text>
           <p style={{marginBottom: "1rem", fontSize: "14px"}}>{product.description}</p>
-          <Button variant="primary" style={{    backgroundColor: "#E05D5D",  border: "none"}}>Buy Now</Button>
+          <Button variant="secondary" href={`/detail/${product._id}`} style={{ backgroundColor: "#112031" , border: "none"}}>View</Button>
+          <Button variant="primary" style={{    backgroundColor: "#E05D5D",  border: "none", position: "absolute", right: "10px"}}>Buy Now</Button>
         </Card.Body>
       </Card>
     </Col>

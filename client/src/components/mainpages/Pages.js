@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router'
 import Products from './products/Products'
+import DetailProduct from './detailProduct/DetailProduct'
 import Login from './auth/Login'
 import Register from './auth/Register'
 import Notfound from './utils/not_found/Notfound'
@@ -12,7 +13,7 @@ export default function Pages() {
             <Route path="/" exact component={Products}/>
             <Route path="/login" exact component={Login}/>
             <Route path="/register" exact component={Register}/>
-
+            <Route path="/detail/:id" exact component={DetailProduct} />
             <Route path="*" exact component={Notfound}/>
         </Switch>
     )
